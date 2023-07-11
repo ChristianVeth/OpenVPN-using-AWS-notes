@@ -64,7 +64,7 @@ instructions;
 
 12. As expected with this sort of first time project, we run into a hurdle!           
 
-     ![Alt text](image.jpg) 
+     ![Alt text](retryissue.jpg) 
     <img src="D:\Obsidian Vault\Image Links\20230605_145420.jpg">
 
     Now for the fun part, the troubleshooting! As I see it, there's one of 3 possibilities for the origin of our error; AWS server side, Apex Legends server side, or OpenVPN settings in the Admin UI. It's likely not OpenVPN settings, since I'd assume they've configured their default settings without any sort of firewalls or blacklists. That leaves just two more options... one of which would be virtually out of my control, so let's assume it's our AWS server and start with that!
