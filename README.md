@@ -75,5 +75,4 @@ instructions;
 
  ![Alt text](apexportforward.png) 
     <img src="D:\Obsidian Vault\Image Links\apexports.png">
-
 15. You should now be able to connect to the Apex Legends online gaming servers! Keep in mind this should theoretically work with any connecting to any game, you will just need to     substitute the new games ports respectively, and find out if they have different rules for inbound/outbound. 
