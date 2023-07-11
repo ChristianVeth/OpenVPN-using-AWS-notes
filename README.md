@@ -10,47 +10,47 @@ This guide will teach you how manually setup your own VPN using OpenVPN on an AW
 
 5. Now it's time to SSH into your server! Open up the terminal and type in;                 
 
-    | ssh -i /pathtokey/nameofkey.pem ubuntu@yourelasticip                                       
+        | ssh -i /pathtokey/nameofkey.pem ubuntu@yourelasticip                                       
 
     Type yes in response to your request, and you're in!
 
 6. As always, it's best practice to update and upgrade your machine. Type in;                          
 
-    | sudo apt update                                                                                                       
-    | sudo apt upgrade -y
+        | sudo apt update                                                                                                       
+        | sudo apt upgrade -y
 
 7. Now, head over to https://as-portal.openvpn.com/get-access-server/ubuntu?source=default-signup and sign up for a free account (if you don't already have one). Then follow the instructions by adding the following commands in your terminal, but first we will need to use sudo  along with the commands we were given from openvpn's official 
 instructions;                                                      
 
-    | sudo apt update && apt -y install ca-certificates wget net-                                                                   
+        | sudo apt update && apt -y install ca-certificates wget net-                                                                   
 
-    After inputting this command, I received an error that access has been denied to port 80! Since you've follow my instructions so far, unfortunately so will you. But that's okay, because it's all a learning experience, and it's an easy fix! I forgot to have us add access to HTTP port 80 as an outbound rule (since this is our server reaching out to openvpn, as opposed to ssh into the server, which would be an inbound rule). Go ahead and add the outbound rule, HTTP to port 80, and make sure to allow access to anywhere. While your at it, it's time to add another outbound protocol as Custom TCP to port 443 as well, which will be need to connect to OpenVPN. Let's try that command 
+    After inputting this command, I received an error that access has been denied to port 80! Since you've follow my instructions so far, unfortunately so will you. But that's okay, because it's all a learning experience, and it's an easy fix! I forgot to have us add access to HTTP port 80 as an outbound rule (since this is our server reaching out to openvpn, as opposed to ssh into the server, which would be an inbound rule). We will need to add two outbound rules, HTTP to port 80, and Custom TCP to port 443 as well. and make sure to allow access to anywhere. These will both be need to allow accedss to your OpenVPN. Let's try that command again;                                                 
 
-    again;                                                 
-
-    | sudo apt update && apt -y install ca-certificates wget net-                                    
+        | sudo apt update && apt -y install ca-certificates wget net-                                    
 
     No more access to port 80 denied this time, but it's still not working! Now I've got another error, this time, it's 13: permissions denied... so let's do some digging... apparently specifying sudo while downloading OpenVPN it's wanting us to become root. So, let's try again, but this time we're going to have to add a different first step to the command line;                                                                     
 
-    | sudo -i                                                                                                                                                                                                                   
-    | sudo apt update && apt -y install ca-certificates wget net-tools gnupg                                                               
+        | sudo -i                                                                                                                                                                                                                   
+        | sudo apt update && apt -y install ca-certificates wget net-tools gnupg                                                               
 
     then select the service option, not user, and select OK. Hit enter.                                                                 
 
-    | sudo wget https://as-repository.openvpn.net/as-repo-public.asc -qO /etc/apt/trusted.gpg.d/as-repository.asc                                                                    | 
+        | sudo wget https://as-repository.openvpn.net/as-repo-public.asc -qO /etc/apt/trusted.gpg.d/as-repository.asc                                                                    | 
 
     sudo echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/as-repository.asc] http://as-repository.openvpn.net/as/debian jammy main">/etc/apt/sources.list.d/openvpn-as-repo.list                                                                   
 
-    | sudo apt update && apt -y install openvpn-as                                                         
+        | sudo apt update && apt -y install openvpn-as                                                         
 
     When asked about Newer kernel available, press Ok. Which services should be restarted? systemd.logind.service.                                                                            
+        
         Access Server Web UIs are available here:                                                                 
         Admin UI: https://x.x.x.x:943/admin                                                                             
+        
         Client UI: https://x.x.x.x:943/                                                                                      
     To login please use the "openvpn" account with "xxxxxxxxx" password.                    
     Notate your Access Server Web UIs, but remember to change the private ip that openvpn has provide to reflect the public IP address of your Elastic IP.             Copy down, or change your password using;                                                             
 
-    | sudo passwd openvpn                                                                                               
+        | sudo passwd openvpn                                                                                               
 
     then select your new password!
 
