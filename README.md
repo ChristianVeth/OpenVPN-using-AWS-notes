@@ -74,7 +74,7 @@ instructions;
 14. Head to either your security groups, or to your Instance and select the security tab to edit the rules. Googling some information about port forwarding to Apex shows us that Apex uses the same ports for inbound and outbound traffic. For PC on Steam's platform, there are quite a few ports that will need to be added in our rules. For both TCP and UDP, you'll be selecting Custom TCP/UDP, and allowing access to anywhere for both. If we knew the public facing IP's for Apex's servers, we could input those for the rules to tighten up our security, but unfortunately we do not. 
 ***Update*** Good news! I've found the public facing IP for the Apex servers! We can leave the Outbound rules as they are, however we should change the Inbound rules as it's not safe to have ports open to any IP address. In your inbound rules, add "127.0.0.53/32" to your source for each of the ports that have been opened for Apex Legends. This will now result in only the Apex Servers being able to communicate with these ports instead of any IPv4. Below are the ports need for PC on steam!                                                                                       
 
- ![Alt text](image.png) 
+ ![Alt text](apexportforward.png) 
     <img src="D:\Obsidian Vault\Image Links\apexports.png">
 
 15. You should now be able to connect to the Apex Legends online gaming servers! Keep in mind this should theoretically work with any connecting to any game, you will just need to substitute the new games ports respectively, and find out if they have different rules for inbound/outbound. 
