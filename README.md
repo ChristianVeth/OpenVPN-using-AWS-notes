@@ -45,8 +45,8 @@ instructions;
         
         Access Server Web UIs are available here:                                                                 
         Admin UI: https://x.x.x.x:943/admin                                                                             
-        
         Client UI: https://x.x.x.x:943/                                                                                      
+    
     To login please use the "openvpn" account with "xxxxxxxxx" password.                    
     Notate your Access Server Web UIs, but remember to change the private ip that openvpn has provide to reflect the public IP address of your Elastic IP.             Copy down, or change your password using;                                                             
 
