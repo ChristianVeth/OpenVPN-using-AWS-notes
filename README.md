@@ -43,7 +43,7 @@ instructions;
 
     When asked about Newer kernel available, press Ok. Which services should be restarted? systemd.logind.service.                                                                            
         
-        Access Server Web UIs are available here:                                                                 
+        Access Server Web UIs are available here;                                                                 
         Admin UI: https://x.x.x.x:943/admin                                                                             
         Client UI: https://x.x.x.x:943/                                                                                      
     
