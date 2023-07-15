@@ -1,3 +1,6 @@
+# Header Title
+Step by step for creating your VPN
+
 This guide will teach you how manually setup your own VPN using OpenVPN on an AWS server, as well my struggles along the way. Also, if you're interested in using your OpenVPN with online gaming, there are intructions on how to configure your security groups to allow for connection to the Apex Legends online gaming servers (these instructions should be able to be subsituted for any games relatively easily).
 
 1. First things first, you need to create your own Elastic IP address. This will make it so our IP Address stays the same at all times, even when shut down and restarted. Now, navigate to your AWS Dashboard and select Elastic IPs. Then click on allocate new address, select form your options of either an Amazon's pool of IPv4 addresses, or you can use one of the Global static IP addresses by using AWS's Global Accelerator. 
