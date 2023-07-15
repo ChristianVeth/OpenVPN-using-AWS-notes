@@ -4,5 +4,4 @@ test
 
 2. test 
 
-3. doing another test on branches to quick-test branch
-4. now another change before committing without using add
+quick-test testing typing two different chages on the same line in different branches
