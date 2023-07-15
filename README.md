@@ -1,5 +1,4 @@
-# Header Title
-Step by step for creating your VPN
+# Step by step for creating your VPN
 
 This guide will teach you how manually setup your own VPN using OpenVPN on an AWS server, as well my struggles along the way. Also, if you're interested in using your OpenVPN with online gaming, there are intructions on how to configure your security groups to allow for connection to the Apex Legends online gaming servers (these instructions should be able to be subsituted for any games relatively easily).
 
