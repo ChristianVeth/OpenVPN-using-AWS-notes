@@ -1,5 +1,8 @@
 This guide will teach you how manually setup your own VPN using OpenVPN on an AWS server, as well my struggles along the way. Also, if you're interested in using your OpenVPN with online gaming, there are intructions on how to configure your security groups to allow for connection to the Apex Legends online gaming servers (these instructions should be able to be subsituted for any games relatively easily).
 
+# test
+testing the branch feature
+
 1. First things first, you need to create your own Elastic IP address. This will make it so our IP Address stays the same at all times, even when shut down and restarted. Now, navigate to your AWS Dashboard and select Elastic IPs. Then click on allocate new address, select form your options of either an Amazon's pool of IPv4 addresses, or you can use one of the Global static IP addresses by using AWS's Global Accelerator. 
 
 2. Now that you have your own Elastic IP, it's time to create a security group. Your VPN will need at least 3 open inbound ports. Navigate to Security Groups from your AWS Dashboard, then create a new security group. First we will need an SSH open to port 22 so that we can log into it and configure our settings. We will also need Custom TCP port 943, and lastly Custom UDP 1194. All of these should be configured with access from your public facing IP. Next we need to add 2 outbound rules. First add HTTP to port 80, with access to any IPv4, then add TCP to port 443 with access to any IPv4. Give your security group a name, and a description if you'd like, then press create security group to save!
