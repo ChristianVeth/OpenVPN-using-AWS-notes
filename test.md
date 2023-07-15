@@ -4,4 +4,4 @@ test
 
 2. test 
 
-main testing what happens if we make changes to the same line on different branches
+can two different branches have different data for the same line?
